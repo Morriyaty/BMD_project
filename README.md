@@ -9,6 +9,7 @@ updating.....
 3. mafft
 4. pal2nal.pl
 5. parallel
+6. trimal (insatll by conda)
 #### perl packages
 1. Bio::SeqIO
 
@@ -44,3 +45,11 @@ when you have done this, a dic named "filter" wile exits under the folder
 `python3 02.align.py > 02.align.py.sh`
 
 `parallel -j 50 < 02.align.py.sh`
+
+####5. filter gap in cds align files 
+
+`python3 03.trimal.py > 03.trimal.py.sh`
+
+`parallel -j 50 < 03.trimal.py.sh`
+
+`rm filter/*/*.fas`  remove extra files 
