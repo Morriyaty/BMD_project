@@ -53,3 +53,9 @@ when you have done this, a dic named "filter" wile exits under the folder
 `parallel -j 50 < 03.trimal.py.sh`
 
 `rm filter/*/*.fas`  remove extra files 
+
+####6. get ortholog gene tree based on iqtree
+
+`python3 04.iqtree.py > 04.iqtree.py.sh`
+
+`parallel -j 50 < 04.iqtree.py.sh`
