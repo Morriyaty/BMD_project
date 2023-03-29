@@ -38,13 +38,13 @@ python3 01.selectOG.py forest.list 4 bkgest.list 7 Orthogroups.txt.tmp all.cds.c
 
 note:  forest.list shows species name you interest in,
 
-    bkgest.list shows species name of background,
+   bkgest.list shows species name of background,
        
-    4 and 7 mean the species number should exit in one ortholog,
+   4 and 7 mean the species number should exit in one ortholog,
         
-    fa: cat all fasta in one file
+   fa: cat all fasta in one file
 
-    when you have done this, a dic named "filter" wile exits under the folder
+   when you have done this, a dic named "filter" wile exits under the folder
 
 ####4. get cds align files
 
