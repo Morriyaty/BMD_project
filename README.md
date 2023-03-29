@@ -38,13 +38,13 @@ python3 01.selectOG.py forest.list 4 bkgest.list 7 Orthogroups.txt.tmp all.cds.c
 
 note:  forest.list shows species name you interest in,
 
-bkgest.list shows species name of background,
+    bkgest.list shows species name of background,
        
-4 and 7 mean the species number should exit in one ortholog,
+    4 and 7 mean the species number should exit in one ortholog,
         
-fa: cat all fasta in one file
+    fa: cat all fasta in one file
 
-when you have done this, a dic named "filter" wile exits under the folder
+    when you have done this, a dic named "filter" wile exits under the folder
 
 ####4. get cds align files
 
@@ -56,7 +56,9 @@ parallel -j 50 < 02.align.py.sh
 
 ####5. select only one sequence in one specie (min gap number)
 
+```
 python3 02.5.longestSeq.py
+```
 
 ####6. filter gap in cds align files 
 
@@ -84,3 +86,10 @@ python3 05.newformatTREE.py > 05.newformatTREE.py.sh
 parallel -j 50 < 05.newformatTREE.py.sh
 ```
 
+####9. run hyphy absrel model
+
+```
+python3 06.hyphyrun.py > 06.hyphyrun.py.sh
+
+parallel -j 50 < 06.hyphyrun.py
+```
