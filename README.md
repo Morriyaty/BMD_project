@@ -13,6 +13,10 @@ updating.....
 #### perl packages
 1. Bio::SeqIO
 
+#### python packages
+1. Biopython
+2. re
+
 ## compare genome analysis
 
 ### step 1 get ortholog genes from orthofinder
@@ -46,7 +50,11 @@ when you have done this, a dic named "filter" wile exits under the folder
 
 `parallel -j 50 < 02.align.py.sh`
 
-####5. filter gap in cds align files 
+####5. select only one sequence in one specie (min gap number)
+
+python3 02.5.longestSeq.py
+
+####6. filter gap in cds align files 
 
 `python3 03.trimal.py > 03.trimal.py.sh`
 
@@ -54,8 +62,11 @@ when you have done this, a dic named "filter" wile exits under the folder
 
 `rm filter/*/*.fas`  remove extra files 
 
-####6. get ortholog gene tree based on iqtree
+####7. get ortholog gene tree based on iqtree
 
 `python3 04.iqtree.py > 04.iqtree.py.sh`
 
 `parallel -j 50 < 04.iqtree.py.sh`
+
+####8. trans tree-file into hyphy input format
+
