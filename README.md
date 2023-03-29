@@ -30,9 +30,11 @@ updating.....
 
 ####3. select ortholog genes of interests and get their pep and cds
 
-`cat OrthoFinder/Results_Mar28/Orthogroups/Orthogroups.txt | tr " " ";"  > Orthogroups.txt.tmp `
+```
+cat OrthoFinder/Results_Mar28/Orthogroups/Orthogroups.txt | tr " " ";"  > Orthogroups.txt.tmp 
 
-`python3 01.selectOG.py forest.list 4 bkgest.list 7 Orthogroups.txt.tmp all.cds.clean.fa all.pep.clean.fa`
+python3 01.selectOG.py forest.list 4 bkgest.list 7 Orthogroups.txt.tmp all.cds.clean.fa all.pep.clean.fa
+```
 
 note:  forest.list shows species name you interest in,
 
@@ -46,9 +48,11 @@ when you have done this, a dic named "filter" wile exits under the folder
 
 ####4. get cds align files
 
-`python3 02.align.py > 02.align.py.sh`
+```
+python3 02.align.py > 02.align.py.sh
 
-`parallel -j 50 < 02.align.py.sh`
+parallel -j 50 < 02.align.py.sh
+```
 
 ####5. select only one sequence in one specie (min gap number)
 
@@ -56,17 +60,27 @@ python3 02.5.longestSeq.py
 
 ####6. filter gap in cds align files 
 
-`python3 03.trimal.py > 03.trimal.py.sh`
+```
+python3 03.trimal.py > 03.trimal.py.sh
 
-`parallel -j 50 < 03.trimal.py.sh`
+parallel -j 50 < 03.trimal.py.sh
 
-`rm filter/*/*.fas`  remove extra files 
+rm filter/*/*.fas  remove extra files 
+```
 
 ####7. get ortholog gene tree based on iqtree
 
-`python3 04.iqtree.py > 04.iqtree.py.sh`
+```
+python3 04.iqtree.py > 04.iqtree.py.sh
 
-`parallel -j 50 < 04.iqtree.py.sh`
+parallel -j 50 < 04.iqtree.py.sh
+```
 
 ####8. trans tree-file into hyphy input format
+
+```
+python3 05.newformatTREE.py > 05.newformatTREE.py.sh
+
+parallel -j 50 < 05.newformatTREE.py.sh
+```
 
