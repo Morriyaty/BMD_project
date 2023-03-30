@@ -19,7 +19,7 @@ updating.....
 
 ## compare genome analysis
 
-### step 1 get ortholog genes from orthofinder
+### positive selection via orthogroup genes by hyphy
 ####1. filter gff file  
 
 `sed -i -e 's/gene-//g' -e 's/rna-//g' -e 's/cds-//g' test.gff`
