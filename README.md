@@ -93,3 +93,36 @@ python3 06.hyphyrun.py > 06.hyphyrun.py.sh
 
 parallel -j 50 < 06.hyphyrun.py
 ```
+
+####10. stat hyphy output files 
+
+```
+python3 07.stat.py
+```
+
+####11. find forest.list all omega > 1 ortholog
+
+```
+python3 08-1.TESTMT1.py forest.list 6  > forest6.og.txt
+```
+
+note: if you want 5 or less species in forest.list, just change 6 to 5.
+
+####12. find genes according to og name 
+
+```
+python3 09.findgenes.py Orthogroups.txt.tmp forest5.og.txt forest.list forest5.og.gene.txt
+```
+
+####13. align gene name in gff to gene symbol
+
+```
+cat forest5.og.gene.txt | cut -f 2 | sed 's/GS|//g' | sed 's/model/TU/' > forest5.og.gene.txt.tmp
+python3 10.genealign.py forest5.og.gene.txt.tmp /opt/synData/anx21/BMD-work/01.Mus.hifi/02.minimap2/01.vcf.ano/gs.gene.align > zokor5.gene.list
+```
+
+note: format of gs.gene.align, you can get it from gff file
+
+![微信截图_20230403101713](https://user-images.githubusercontent.com/68643810/229396669-73d796cb-5d0e-4d7f-bb34-9c0439371617.png)
+
+####14. 
