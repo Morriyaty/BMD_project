@@ -118,6 +118,7 @@ python3 09.findgenes.py Orthogroups.txt.tmp forest5.og.txt forest.list forest5.o
 
 ```
 cat forest5.og.gene.txt | cut -f 2 | sed 's/GS|//g' | sed 's/model/TU/' > forest5.og.gene.txt.tmp
+
 python3 10.genealign.py forest5.og.gene.txt.tmp /opt/synData/anx21/BMD-work/01.Mus.hifi/02.minimap2/01.vcf.ano/gs.gene.align > zokor5.gene.list
 ```
 
