@@ -1,1 +1,12 @@
-# 将依据[Beginner’s Guide on the Use of PAML to Detect Positive Selection]介绍PAML的正选择有关内容
+将依据[Beginner’s Guide on the Use of PAML to Detect Positive Selection]介绍PAML的正选择有关内容
+
+一 不同的密码子替换模型检测适应性进化
+
+1. branch model
+branch model 假设系统发育树上的不同枝有不同的 ω 值。它们可以用来检测作用于特定谱系的正选择，而不需要对整个系统发生树的 ω 比率进行平均。例如，在检测基因加倍时间后的正选择是useful的，
+在这种情况下，其中一份拷贝可能获得了新功能，因此有一个更快的进化速率。
+
+2. site model
+site model 将基因中任何位点(密码子)的 ω 比率视为来自统计分布的随机变量，因此允许 ω 在密码子之间变化。ω > 1的密码子被定义为正选择。
+Likelihood ratio test(LRT)被用来比较零假设（ω < 1）和备择假设（ω > 1）。
+可以使用Naïve Empirical Bayes (NEB) method 和Bayes empirical Bayes (BEB)检测哪个密码子受到正选择。
