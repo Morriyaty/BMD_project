@@ -10,3 +10,4 @@ branch model 假设系统发育树上的不同枝有不同的 ω 值。它们可
 site model 将基因中任何位点(密码子)的 ω 比率视为来自统计分布的随机变量，因此允许 ω 在密码子之间变化。ω > 1的密码子被定义为正选择。
 Likelihood ratio test(LRT)被用来比较零假设（ω < 1）和备择假设（ω > 1）。
 可以使用Naïve Empirical Bayes (NEB) method 和Bayes empirical Bayes (BEB)检测哪个密码子受到正选择。
+![figure1](https://github.com/Morriyaty/My-Images/blob/main/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230427104237.png)
